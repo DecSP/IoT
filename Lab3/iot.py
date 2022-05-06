@@ -39,7 +39,7 @@ def readSerial():
 
 BROKER_ADDRESS = "demo.thingsboard.io"
 PORT = 1883
-THINGS_BOARD_ACCESS_TOKEN = "WjRrvC8eXmQaTynEIovK"
+THINGS_BOARD_ACCESS_TOKEN = "AfKNmj5wuSyVnUC68wxB"
 
 
 def subscribed(client, userdata, mid, granted_qos):
