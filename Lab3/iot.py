@@ -6,7 +6,7 @@ import random
 import serial.tools.list_ports
 
 mess = ""
-bbc_port = ""
+bbc_port = "/dev/ttyS6"
 
 if len(bbc_port) > 0:
     ser = serial.Serial(port=bbc_port, baudrate=115200)
@@ -39,7 +39,7 @@ def readSerial():
 
 BROKER_ADDRESS = "demo.thingsboard.io"
 PORT = 1883
-THINGS_BOARD_ACCESS_TOKEN = "AfKNmj5wuSyVnUC68wxB"
+THINGS_BOARD_ACCESS_TOKEN = "WjRrvC8eXmQaTynEIovK"
 
 
 def subscribed(client, userdata, mid, granted_qos):
@@ -58,7 +58,7 @@ def recv_message(client, userdata, message):
             client.publish('v1/devices/me/attributes', json.dumps(temp_data), 1)
 
             cmd=jsonobj['params']
-            cmd|=(dev=='PUMP')<<1
+            cmd|=(dev=='FAN')<<1
     except:
         pass
     
